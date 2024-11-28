@@ -1,0 +1,4 @@
+package makala
+
+class Dish {
+}
