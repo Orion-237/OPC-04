@@ -35,7 +35,7 @@ class Commande : CommandeInterface {
 
     override fun appliquerReduction(): Double{
         if(TotalConso > 10000.0){
-            return (TotalConso * reduction) / 100
+            return (TotalConso - (TotalConso * reduction) / 100)
         }
         return TotalConso
     }

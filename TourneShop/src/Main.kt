@@ -14,7 +14,6 @@ fun optionChoix(){
             "\t3.  Afficher le montant total avant et après réduction. \uD83C\uDF7D\uFE0F \n" +
             "\t99- Quitter le programme")
 }
-
 fun listePlats(listePlat : MutableList<Plat>){
     println(
         "\t=====================================")
@@ -106,6 +105,7 @@ fun main(){
                     var continu2 = 2
 
                     do {
+                        println("\tConnectez vous")
                         println("\tEntrez votre nom :")
                         var nom = readLine() ?: throw NumberFormatException("\t \uD83D\uDE22 Entrée vide")
                         println("\tEntrez votre mot de passe :")
