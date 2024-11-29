@@ -20,5 +20,5 @@ class Order(var name: String = "No Name") {
         dishes.add(dish)
     }
     fun totalPrice(): Double = dishes.sumOf { it.total() }
-    fun discountedPrice(): Double = discountPercentage*discountedPrice()
+    fun discountedPrice(): Double = discountPercentage*totalPrice()
 }
