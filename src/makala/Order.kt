@@ -9,13 +9,19 @@ class Order(var name: String = "No Name") {
     var id = "CMD${nextOrderNumber()}"
     val dishes: MutableList<Dish> = mutableListOf()
 
-    fun details(): String {
-        var result: String = "📝Details of order $id by $name:\n"
-        dishes.forEachIndexed { i, dish ->
-            result += "\t${i+1}. ${dish.details()}\n"
+    fun details(): MutableList<String> {
+        val result: MutableList<String> = mutableListOf()
+        dishes.forEach { dish ->
+            result += "\t${dish.details()}"
+        }
+        val totalPrice = totalPrice()
+        result += "\tTOTAL_PRICE : $totalPrice XAF"
+        if (totalPrice > 15000) {
+            result += "\tTOTAL_PRICE after discount: ${discountedPrice()} XAF"
         }
         return result
     }
+    fun detailsBrief(): String = "📝Order $id by $name"
     fun addDish(dish: Dish) {
         dishes.add(dish)
     }

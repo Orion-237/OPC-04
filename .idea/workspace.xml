@@ -7,7 +7,6 @@
     <list default="true" id="45410bc7-b23a-4a6a-b1e6-875862dcd1f7" name="Changes" comment="Created the main files of the project: Main, Dish, Order.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/makala/Dish.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/makala/Dish.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/makala/Order.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/makala/Order.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -46,22 +45,36 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Kotlin.MainKt.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "OPC-04-Abena-Alex",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/ABENA_Alex_Nelson/IdeaProjects/AtomicKotlin",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "onboarding.tips.debug.path": "C:/Users/ABENA_Alex_Nelson/IdeaProjects/OPC-04/src/Main.kt",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Kotlin.MainKt.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;OPC-04-Abena-Alex&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/ABENA_Alex_Nelson/IdeaProjects/AtomicKotlin&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/ABENA_Alex_Nelson/IdeaProjects/OPC-04/src/Main.kt&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
+  <component name="RunManager">
+    <configuration name="MainKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="MainKt" />
+      <module name="OPC-04" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Kotlin.MainKt" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -80,7 +93,10 @@
       <updated>1732803774160</updated>
       <workItem from="1732803775312" duration="5526000" />
       <workItem from="1732816051551" duration="12675000" />
-      <workItem from="1732830100007" duration="11281000" />
+      <workItem from="1732830100007" duration="15094000" />
+      <workItem from="1732885994274" duration="10000" />
+      <workItem from="1732912948297" duration="2128000" />
+      <workItem from="1732947807667" duration="6712000" />
     </task>
     <task id="LOCAL-00001" summary="Created the main files of the project: Main, Dish, Order.">
       <option name="closed" value="true" />
@@ -101,7 +117,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/OPC-04-Abena-Alex" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -116,22 +144,17 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="kotlin-line">
           <url>file://$PROJECT_DIR$/src/Main.kt</url>
-          <line>159</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/Main.kt</url>
-          <line>152</line>
+          <line>211</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="kotlin-line">
           <url>file://$PROJECT_DIR$/src/Main.kt</url>
-          <line>51</line>
+          <line>54</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="kotlin-line">
           <url>file://$PROJECT_DIR$/src/Main.kt</url>
-          <line>86</line>
+          <line>89</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
       </breakpoints>

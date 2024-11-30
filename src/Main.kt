@@ -1,3 +1,6 @@
+import makala.*
+
+
 fun greetings(message: String?) {
     if (message != null) {
         val l = 5
@@ -95,7 +98,6 @@ fun removeFoodInMenu(foodMenu: MutableMap<String,Double>){
             foodMenu.remove(foodMenu.keys.elementAt(choice2-1))
         }
     })
-    menu("New Available Menu", {foodMenu.map { "${it.key}: ${it.value} XAF" }.toMutableList()})
 }
 fun addFoodInMenu(foodMenu: MutableMap<String,Double>){
     try {
@@ -116,7 +118,7 @@ fun addFoodInMenu(foodMenu: MutableMap<String,Double>){
         println("Invalid input")
         println("Nothing added")
     }
-    menu("New Available Menu", {foodMenu.map { "${it.key}: ${it.value} XAF" }.toMutableList()})
+    menu("New Available Menu", { foodMenu.map { "${it.key}: ${it.value} XAF" }.toMutableList()})
 }
 
 fun showFoodMenu(foodMenu: MutableMap<String,Double>){
@@ -126,6 +128,65 @@ fun showFoodMenu(foodMenu: MutableMap<String,Double>){
             1 -> addFoodInMenu(foodMenu)
             2 -> removeFoodInMenu(foodMenu)
             3 -> modifyFoodInMenu(foodMenu)
+        }
+    }, "\n\tWhat do you want to do?")
+}
+
+fun editOrder(order: Order, foodMenu: MutableMap<String,Double>){
+    menu(order.detailsBrief(), { foodMenu.map { "${it.key}: ${it.value} XAF" }.toMutableList() }, { choice ->
+        if(choice != null){
+            val item = foodMenu.entries.elementAt(choice - 1)
+            val newDish = Dish(item.key, item.value)
+            print("What Quantity(1): ")
+            val txt = readln()
+            if (txt.isNotBlank()){
+                val qty: Int
+                try{
+                    qty = txt.toInt()
+                    if(qty<1){
+                        throw IllegalArgumentException("Invalid quantity")
+                    }
+                    newDish.qty = qty
+                    order.addDish(newDish)
+                    println("Dish added: ${newDish.name} (${newDish.qty} portions) - ${newDish.price} XAF per portion")
+                }catch (e: NumberFormatException){
+                    println("Not a number")
+                }catch (e: IllegalArgumentException){
+                    println("Quantity can not be less than or equal to 0")
+                }
+            }else{
+                order.addDish(newDish)
+                println("Dish added: ${newDish.name} (${newDish.qty} portions) - ${newDish.price} XAF per portion")
+            }
+        }
+        menu(order.detailsBrief(), { order.details()})
+    }, "\n\tWhat dish do you want to add?")
+}
+
+fun createOrder(orders: MutableList<Order>, foodMenu: MutableMap<String,Double>){
+    print("Enter the name of client(No Name): ")
+    val name = readln()
+    var newOrder: Order
+    if (name.isBlank()) {
+        newOrder = Order()
+    }else{
+        newOrder = Order(name)
+    }
+    orders.add(newOrder)
+    editOrder(newOrder, foodMenu)
+    menu("Order Management", { orders.map { order -> order.detailsBrief() +"\n"+ order.details().joinToString(separator = "") { "\t" +it + "\n" } }.toMutableList() })
+}
+fun manageOrders(orders: MutableList<Order>, foodMenu: MutableMap<String, Double>){
+    if (orders.isEmpty()){
+        menu("Order Management", { mutableListOf("No orders right now") })
+    }else{
+        menu("Order Management", { orders.map { order -> order.detailsBrief() +"\n"+ order.details().joinToString { "\t" +it + "\n" } }.toMutableList() })
+    }
+    menu(null, { mutableListOf("Create order", "Remove order", "Modify order") },{ choice1 ->
+        when (choice1) {
+            1 -> {createOrder(orders, foodMenu)}
+            2 -> {}
+            3 -> {}
         }
     }, "\n\tWhat do you want to do?")
 }
@@ -139,14 +200,15 @@ fun main() {
         "Okok" to 500.0,
         "Bassa-style Okok" to 500.0,
     )
+    val orders: MutableList<Order> = mutableListOf()
     val mainOptions: MutableList<String> = mutableListOf(
         "Orders",
         "Food Menu",
     )
-
+    var foodOrders: MutableList<Order> = mutableListOf()
     menu("📝Welcome to Mami Makala's place😋", { mainOptions }, { choice ->
         when (choice) {
-            1 -> {            }
+            1 -> {manageOrders(orders, foodMenu)}
             2 -> {
                 showFoodMenu(foodMenu)
             }
