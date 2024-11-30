@@ -84,8 +84,7 @@ fun modifyFoodInMenu(foodMenu: MutableMap<String,Double>){
                 foodMenu[name] = price
             }catch (e: IllegalArgumentException){
                 println(e.message)
-            }
-            catch (e:Exception){
+            }catch (e:Exception){
                 println("Invalid input")
                 println("No change operated")
             }
@@ -166,15 +165,30 @@ fun editOrder(order: Order, foodMenu: MutableMap<String,Double>){
 fun createOrder(orders: MutableList<Order>, foodMenu: MutableMap<String,Double>){
     print("Enter the name of client(No Name): ")
     val name = readln()
-    var newOrder: Order
-    if (name.isBlank()) {
-        newOrder = Order()
+    val newOrder: Order
+    newOrder = if (name.isBlank()) {
+        Order()
     }else{
-        newOrder = Order(name)
+        Order(name)
     }
     orders.add(newOrder)
     editOrder(newOrder, foodMenu)
     menu("Order Management", { orders.map { order -> order.detailsBrief() +"\n"+ order.details().joinToString(separator = "") { "\t" +it + "\n" } }.toMutableList() })
+}
+fun removeOrder(orders: MutableList<Order>){
+    menu("Which order to remove?", { orders.map { it.detailsBrief() }.toMutableList() }, { choice ->
+        if (choice != null){
+            orders.remove(orders.elementAt(choice-1))
+            println("Order removed")
+        }
+    })
+}
+fun modifyOrder(orders: MutableList<Order>, foodMenu: MutableMap<String,Double>){
+    menu("Which order to edit?", { orders.map { it.detailsBrief() }.toMutableList() }, { choice ->
+        if (choice != null){
+            editOrder(orders.elementAt(choice-1), foodMenu)
+        }
+    })
 }
 fun manageOrders(orders: MutableList<Order>, foodMenu: MutableMap<String, Double>){
     if (orders.isEmpty()){
@@ -184,21 +198,21 @@ fun manageOrders(orders: MutableList<Order>, foodMenu: MutableMap<String, Double
     }
     menu(null, { mutableListOf("Create order", "Remove order", "Modify order") },{ choice1 ->
         when (choice1) {
-            1 -> {createOrder(orders, foodMenu)}
-            2 -> {}
-            3 -> {}
+            1 -> createOrder(orders, foodMenu)
+            2 -> removeOrder(orders)
+            3 -> modifyOrder(orders, foodMenu)
         }
     }, "\n\tWhat do you want to do?")
 }
 fun main() {
     val foodMenu = mutableMapOf(
-        "Chicken DG" to 2000.0,
-        "Taro and Yellow soup" to 1500.0,
-        "Roasted foodMenu" to 1500.0,
-        "Ndole" to 1500.0,
+        "Chicken DG 🍗" to 2000.0,
+        "Taro and Yellow soup " to 1500.0,
+        "Roasted fish 🐟" to 1500.0,
+        "Ndole and Plantains 🍌" to 1500.0,
         "Eru" to 1500.0,
         "Okok" to 500.0,
-        "Bassa-style Okok" to 500.0,
+        "Bassa Okok" to 700.0,
     )
     val orders: MutableList<Order> = mutableListOf()
     val mainOptions: MutableList<String> = mutableListOf(
@@ -208,10 +222,8 @@ fun main() {
     var foodOrders: MutableList<Order> = mutableListOf()
     menu("📝Welcome to Mami Makala's place😋", { mainOptions }, { choice ->
         when (choice) {
-            1 -> {manageOrders(orders, foodMenu)}
-            2 -> {
-                showFoodMenu(foodMenu)
-            }
+            1 -> manageOrders(orders, foodMenu)
+            2 -> showFoodMenu(foodMenu)
             else -> {}
         }
     })

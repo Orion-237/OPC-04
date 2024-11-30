@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="45410bc7-b23a-4a6a-b1e6-875862dcd1f7" name="Changes" comment="Created the main files of the project: Main, Dish, Order.">
+    <list default="true" id="45410bc7-b23a-4a6a-b1e6-875862dcd1f7" name="Changes" comment="Started implementing order management. Implemented the creation of orders">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/makala/Order.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/makala/Order.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,7 +95,8 @@
       <workItem from="1732830100007" duration="15094000" />
       <workItem from="1732885994274" duration="10000" />
       <workItem from="1732912948297" duration="2128000" />
-      <workItem from="1732947807667" duration="6712000" />
+      <workItem from="1732947807667" duration="6996000" />
+      <workItem from="1732960821908" duration="2662000" />
     </task>
     <task id="LOCAL-00001" summary="Created the main files of the project: Main, Dish, Order.">
       <option name="closed" value="true" />
@@ -106,7 +106,15 @@
       <option name="project" value="LOCAL" />
       <updated>1732804123594</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Started implementing order management. Implemented the creation of orders">
+      <option name="closed" value="true" />
+      <created>1732954794692</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1732954794692</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -137,25 +145,26 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Created the main files of the project: Main, Dish, Order." />
-    <option name="LAST_COMMIT_MESSAGE" value="Created the main files of the project: Main, Dish, Order." />
+    <MESSAGE value="Started implementing order management. Implemented the creation of orders" />
+    <option name="LAST_COMMIT_MESSAGE" value="Started implementing order management. Implemented the creation of orders" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="kotlin-line">
           <url>file://$PROJECT_DIR$/src/Main.kt</url>
-          <line>211</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/Main.kt</url>
-          <line>54</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/Main.kt</url>
-          <line>89</line>
+          <line>88</line>
           <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/Main.kt</url>
+          <line>223</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/Main.kt</url>
+          <line>207</line>
+          <option name="timeStamp" value="9" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
